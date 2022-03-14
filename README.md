@@ -1,4 +1,4 @@
-# Riegel FPGA Board
+# Riegel Computer
 
 Riegel is an FPGA computer designed by Lone Dynamics Corporation.
 
