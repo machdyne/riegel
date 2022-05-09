@@ -14,6 +14,10 @@ Building the blinky example requires [Yosys](https://github.com/YosysHQ/yosys), 
 
 Assuming they are installed, you can simply type `make` to build the gateware, which will be written to output/blinky.bin. You can then use [ldprog](https://github.com/machdyne/ldprog) to write the gateware to the device.
 
+## Zucker
+
+[Zucker](https://github.com/machedyne/zucker) is a RISC-V SOC designed specifically for Riegel hardware.
+
 ## ISP Header
 
 The ISP header can be used to program the FPGA SRAM as well as the MMOD flash memory. 
