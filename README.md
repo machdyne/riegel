@@ -39,6 +39,8 @@ sudo dfu-util --a 0 -D zucker/output/soc.bin
 sudo dfu-util --a 1 -D zucker/apps/lix/lix.bin
 ```
 
+Note: It may be necessary to remove the MicroSD card before programming with DFU.
+
 Exit the bootloader and continue booting:
 
 ```
