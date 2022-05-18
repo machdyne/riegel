@@ -28,7 +28,7 @@ In order to install the USB bootloader you will need to use the ISP header and [
 git clone https://github.com/machdyne/tinydfu-bootloader
 cd tinydfu-bootloader/boards/riegel
 make
-ldprog -f tinydfu_riegel-multi.bin
+make prog
 ```
 
 Now you can program the flash MMOD over USB:
