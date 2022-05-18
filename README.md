@@ -18,6 +18,33 @@ Assuming they are installed, you can simply type `make` to build the gateware, w
 
 [Zucker](https://github.com/machdyne/zucker) is a RISC-V SOC designed specifically for Riegel hardware.
 
+## USB Bootloader
+
+Riegel supports updating the flash MMOD over its USB-C port with the USB DFU (Device Firmware Upgrade) protocol. When Riegel powers on (or restarts) the USB bootloader waits 5 seconds for a USB command and then continues the boot process, if it receives a command it will wait until the device is detached (with `dfu-util -e`) or rebooted (with `ldprog -r`).
+
+In order to install the USB bootloader you will need to use the ISP header and [ldprog](https://github.com/machdyne/ldprog). Make sure you have first installed the software required to build the Blinky example above.
+
+```
+git clone https://github.com/machdyne/tinydfu-bootloader
+cd tinydfu-bootloader/boards/riegel
+make
+ldprog -f tinydfu_riegel-multi.bin
+```
+
+Now you can program the flash MMOD over USB:
+
+```
+ldprog -r
+sudo dfu-util --a 0 -D zucker/output/soc.bin
+sudo dfu-util --a 1 -D zucker/apps/lix/lix.bin
+```
+
+Exit the bootloader and continue booting:
+
+```
+dfu-util -e -a 0
+```
+
 ## ISP Header
 
 The ISP header can be used to program the FPGA SRAM as well as the MMOD flash memory. 
