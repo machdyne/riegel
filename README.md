@@ -42,7 +42,7 @@ sudo dfu-util --a 1 -D zucker/apps/lix/lix.bin
 Exit the bootloader and continue booting:
 
 ```
-dfu-util -e -a 0
+sudo dfu-util -e -a 0
 ```
 
 ## ISP Header
