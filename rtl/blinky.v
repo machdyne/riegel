@@ -3,7 +3,7 @@ module blinky
 )
 (
 
-	input CLK_100,
+	input CLK_48,
 
 	output reg LED_A,
 
@@ -30,7 +30,7 @@ module blinky
 	wire clk;
 	wire clk10khz;
 
-	assign clk = CLK_100;
+	assign clk = CLK_48;
 
 	reg [31:0] counter = 0;
 
@@ -52,7 +52,6 @@ module blinky
 	assign PMOD_B9 = counter[25];
 	assign PMOD_B10 = counter[24];
 
-	wire clk = CLK_100;
    reg [14:0] clk10khz_ctr; // approx
    wire clk10khz = clk10khz_ctr[14];
 
