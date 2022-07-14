@@ -4,7 +4,7 @@ Riegel is an FPGA computer designed by Lone Dynamics Corporation.
 
 ![Riegel Computer](https://github.com/machdyne/riegel/blob/b3751f4ae0214ddb61edb550aa9f5bc8b70327ad/riegel.png)
 
-This repo contains schematics, pinouts and example gateware.
+This repo contains schematics, pinouts, a 3D-printable case, example gateware and documentation.
 
 Find more information on the [Riegel product page](https://machdyne.com/product/riegel-computer/).
 
