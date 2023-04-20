@@ -4,7 +4,7 @@ Riegel is an FPGA computer designed by Lone Dynamics Corporation.
 
 ![Riegel Computer](https://github.com/machdyne/riegel/blob/b3751f4ae0214ddb61edb550aa9f5bc8b70327ad/riegel.png)
 
-This repo contains schematics, pinouts, a 3D-printable case, example gateware and documentation.
+This repo contains schematics, PCB layouts, pinouts, a 3D-printable case, example gateware and documentation.
 
 Find more information on the [Riegel product page](https://machdyne.com/product/riegel-computer/).
 
@@ -68,4 +68,21 @@ The ISP header can be used to program the FPGA SRAM as well as the MMOD flash me
 | 6 | CDONE |
 | 7 | GND |
 | 8 | PWR3V3 (out) |
+
+## Board Revisions
+
+| Revision | Notes |
+| -------- | ----- |
+| V3B | Latest production board |
+| V4 | Work in progress; improves USB routing  |
+
+## License
+
+The contents of this repo are released under the [Lone Dynamics Open License](LICENSE.md) with the following exceptions:
+
+- The KiCad design files contain parts of the [kicad-pmod](https://github.com/mithro/kicad-pmod) library which is released under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+
+- The KiCad design files may contain symbols and footprints released under other licenses; please contact us if we've failed to give proper attribution.
+
+Note: You can use these designs for commercial purposes but we ask that instead of producing exact clones, that you either replace our trademarks and logos with your own or add your own next to ours.
 
