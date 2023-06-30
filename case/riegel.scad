@@ -6,6 +6,8 @@
 
 $fn = 100;
 
+dev_edition = true;
+
 board_width = 40;
 board_thickness = 1.5;
 board_length = 90;
@@ -24,7 +26,7 @@ module ldq_board() {
 	
 	difference() {
 		color([0,0.5,0])
-			roundedcube(board_width,board_length,board_thickness,3);
+			roundedcube(board_width,board_length,board_thickness,2);
 		translate([5, 5, -1]) cylinder(d=3.2, h=10);
 		translate([5, 85, -1]) cylinder(d=3.2, h=10);
 		translate([35, 5, -1]) cylinder(d=3.2, h=10);
@@ -38,19 +40,21 @@ module ldq_case_top() {
 	difference() {
 				
 		color([0.5,0.5,0.5])
-			roundedcube(board_width,board_length,15,3);
+			roundedcube(board_width,board_length,15,2);
 			
 		translate([1.5,2,-2])
-			roundedcube(board_width-3.5,board_length-4,4,3);
+			roundedcube(board_width-3.5,board_length-4,4,2);
 
 		translate([1.5,10,-2])
-			roundedcube(board_width-8,board_length-20,15,3);
+			roundedcube(board_width-8,board_length-20,15,2);
 
 		translate([10,2,-2])
-			roundedcube(board_width-20,board_length-4,15,5);
+			roundedcube(board_width-20,board_length-4,15,2);
 		
-		// ISP header
-		translate([16,66.5,2]) cube([12,6,20]);
+		if (dev_edition) {
+			// ISP header
+			translate([16,66.5,2]) cube([12,6,20]);
+		}
 		
 		// VGA
 		translate([30,26.2-(31/2),-2]) cube([30,31,12.5+2]);
@@ -100,13 +104,13 @@ module ldq_case_bottom() {
 	
 	difference() {
 		color([0.5,0.5,0.5])
-			roundedcube(board_width,board_length,8.5,3);
+			roundedcube(board_width,board_length,8.5,2);
 		
 		translate([2,10,2])
-			roundedcube(board_width-4,board_length-20,8,3);
+			roundedcube(board_width-4,board_length-20,8,2);
 				
 		translate([10,2.5,2])
-			roundedcube(board_width-20,board_length-5,8,3);
+			roundedcube(board_width-20,board_length-5,8,2);
 
 		// bolt holes
 		translate([5, 5, -11]) cylinder(d=3.2, h=25);
